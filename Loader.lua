@@ -54,7 +54,7 @@ end
 print("Command Handler ready.")
 print("Loading Players...")
 
-for _,player in pairs(game.Players:GetPlayers()) do
+--[[for _,player in pairs(game.Players:GetPlayers()) do
     print(player.Name .. " being checked.")
     for _,v in pairs(config.Controllers) do
        if(tostring(player.UserId) == tostring(v)) then
@@ -72,6 +72,19 @@ game.Players.PlayerAdded:Connect(function(player)
             player.Chatted:Connect(function(msg)
                  Command(player, msg)
             end)
+        end
+    end
+end)]]--
+
+ReplicatedStorage.DefaultChatSystemChatEvents.OnMessageDoneFiltering.OnClientEvent:Connect(function(Data)
+    -- // Get all of the data
+    local Player = Players[Data.FromSpeaker]
+    local Message = Data.Message
+    local Channel = Data.OriginalChannel
+        
+     for _,v in pairs(config.Controllers) do
+       if(tostring(Player.UserId) == tostring(v)) then
+              Command(player, Message)
         end
     end
 end)
