@@ -1,6 +1,7 @@
 local config = _G.AgonyDropper
 
-local commands = loadstring()()
+loadstring("https://raw.githubusercontent.com/diz-zzyy/AgonyDropper/main/Commands.lua")()
+local commands = _G.AgonyCommands
 
 if game.PlaceId ~= 2788229376 then
     messagebox("You are not in the correct game, please ensure you are in 'Da Hood'.", "Agony", 0)
@@ -28,7 +29,7 @@ game.Players.PlayerAdded:Connect(function(player)
         cmd = string.split(msg," ")
         if(string.sub(chat,1,1) == config.prefix) then
             if(commands[cmd[1]] ~= nil) then
-                commands[cmd[1]]()
+                commands[cmd[1]]({cmd[2], cmd[3], cmd[4], cmd[5], cmd[6], cmd[7], cmd[8], cmd[9], cmd[10], cmd[11]})
             end
         end
     end)
