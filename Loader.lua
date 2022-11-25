@@ -39,7 +39,7 @@ function Command(player)
              print(cmd1)
             if(_G.AgonyCommands[cmd1] ~= nil) then
                 print("Has command")
-                _G.AgonyCommands[cmd1]({cmd[2], cmd[3], cmd[4], cmd[5], cmd[6], cmd[7], cmd[8], cmd[9], cmd[10], cmd[11]})
+                _G.AgonyCommands[cmd1]({cmd[2], cmd[3], cmd[4], cmd[5], cmd[6], cmd[7], cmd[8], cmd[9], cmd[10], cmd[11]}, player)
             end
         end
     end)
