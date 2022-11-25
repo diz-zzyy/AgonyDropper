@@ -1,6 +1,7 @@
 _G.AgonyDropper = {
     -- Controllers : Enter the UserID's of the players that can control the bots.
     Controllers = {
+        "707293189",
         "12813448",
     },
     
@@ -11,4 +12,5 @@ _G.AgonyDropper = {
     MaxFps = 3,
 }
 
+-- Loader : Loads the script.
 loadstring(game:HttpGet("https://raw.githubusercontent.com/diz-zzyy/AgonyDropper/main/Loader.lua"))()
