@@ -58,9 +58,9 @@ for _,player in pairs(game.Players:GetPlayers()) do
     print(player.Name .. " being checked.")
     for _,v in pairs(config.Controllers) do
        if(tostring(player.UserId) == tostring(v)) then
-            player.PlayerChatted:Connect(function(msg)
-                  ommand(player, msg)
-            end
+            player.Chatted:Connect(function(msg)
+                  Command(player, msg)
+            end)
         end
     end
 end
@@ -69,9 +69,9 @@ game.Players.PlayerAdded:Connect(function(player)
     print(player.Name .. " being checked.")
     for _,v in pairs(config.Controllers) do
        if(tostring(player.UserId) == tostring(v)) then
-            player.PlayerChatted:Connect(function(msg)
+            player.Chatted:Connect(function(msg)
                  Command(player, msg)
-            end
+            end)
         end
     end
 end)
