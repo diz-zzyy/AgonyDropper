@@ -28,7 +28,7 @@ cmds["chat"] = function(args, p)
   else
      local str = ""
      for i = 1,50 do
-      if(args[i] ~= nil) then str = str .. " " .. args[i]) end
+      if(args[i] ~= nil) then str = str .. " " .. args[i] end
      end
   
      game.ReplicatedStorage.DefaultChatSystemChatEvents.SayMessageRequest:FireServer(str,  "All")
