@@ -88,7 +88,6 @@ ReplicatedStorage.DefaultChatSystemChatEvents.OnMessageDoneFiltering.OnClientEve
         
     for _,v in pairs(config.Controllers) do
         if(tostring(player.UserId) == tostring(v)) then
-            print(player.Name .. " is a controller!")
             Command(player, msg)
         end
     end
