@@ -76,10 +76,6 @@ game.Players.PlayerAdded:Connect(function(player)
     end
 end)
 
-Nexus:AddCommand("AgonyCommand", function(player, msg)
-   Command(player, msg)   
-end)
-
 print("Players ready.")
 print("Finishing off...")
 
