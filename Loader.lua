@@ -1,5 +1,7 @@
 local config = _G.AgonyDropper
 
+if(_G.AgonyLoaded == true) then messagebox("Make sure you only execute Agony once.", "Agony", 0) return else _G.AgonyLoaded = true end
+
 loadstring(game:HttpGet("https://raw.githubusercontent.com/diz-zzyy/AgonyDropper/main/Commands.lua"))()
 
 if game.PlaceId ~= 2788229376 then
