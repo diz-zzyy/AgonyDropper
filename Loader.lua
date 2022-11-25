@@ -84,7 +84,5 @@ print("Players ready.")
 print("Finishing off...")
 
 loadstring(game:HttpGet("https://raw.githubusercontent.com/PickleIsDaBest/Min/main/Skript"))()
-loadstring(game:HttpGet("https://raw.githubusercontent.com/Stefanuk12/ROBLOX/master/Other/ChattedFix.lua"))()
-Nexus.Commands.performance(5)
 
 print("Agony loaded!")
