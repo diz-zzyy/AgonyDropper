@@ -17,7 +17,6 @@ else
     print("DaHood Detected!")
 end
 
-setfpscap(5)
 game:GetService("RunService"):Set3dRenderingEnabled(false)
 
 repeat wait() until game:IsLoaded() and game.Players.LocalPlayer.Character ~= nil
@@ -93,5 +92,6 @@ print("Players ready.")
 print("Finishing off...")
 
 loadstring(game:HttpGet("https://raw.githubusercontent.com/PickleIsDaBest/Min/main/Skript"))()
+_G.setfpscap(5)
 
 print("Agony loaded!")
