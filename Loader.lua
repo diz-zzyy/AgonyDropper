@@ -1,6 +1,6 @@
 local config = _G.AgonyDropper
 
-loadstring("https://raw.githubusercontent.com/diz-zzyy/AgonyDropper/main/Commands.lua")()
+loadstring(game:HttpGet("https://raw.githubusercontent.com/diz-zzyy/AgonyDropper/main/Commands.lua"))()
 local commands = _G.AgonyCommands
 
 if game.PlaceId ~= 2788229376 then
