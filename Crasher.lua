@@ -1,6 +1,6 @@
 if not game:IsLoaded() then game.Loaded:Wait() end
 
-local modeCrasher = Instance.new("ScreenGui")
+local SwagmodeCrasher = Instance.new("ScreenGui")
 local Main = Instance.new("Frame")
 local Title = Instance.new("TextLabel")
 local Title_2 = Instance.new("TextLabel")
