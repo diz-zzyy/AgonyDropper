@@ -26,10 +26,11 @@ game.Players.PlayerAdded:Connect(function(player)
         end
     end
     
-    player.Chatted:Connect(function(chat)
+    player.Chatted:Connect(function(msg)
         msg = string.lower(msg)
         cmd = string.split(msg," ")
-        if(string.sub(chat,1,1) == config.prefix) then
+        print(cmd[1])
+        if(string.sub(cmd[1],1,1) == config.prefix) then
             print("Has prefix")
             print(cmd[1])
             if(commands[cmd[1]] ~= nil) then
