@@ -5,7 +5,7 @@ if(_G.AgonyLoaded == true) then
     error("Make sure you only execute Agony once.")
     return
 else
-    print("Agony Loading...")
+    print("Agony loading...")
     _G.AgonyLoaded = true 
 end
 
@@ -20,32 +20,41 @@ end
 game:GetService("RunService"):Set3dRenderingEnabled(false)
 
 repeat wait() until game:IsLoaded()
+wait(1)
 
 loadstring(game:HttpGet("https://raw.githubusercontent.com/diz-zzyy/AgonyDropper/main/Commands.lua"))()
 
+print("Commands Loaded!")
+print("Loading AntiAFK...")
+
 local VirtualUser = game:GetService("VirtualUser")
 game:GetService("Players").LocalPlayer.Idled:connect(function()
+    print("AntiAFK running...")
     VirtualUser:Button2Down(Vector2.new(0, 0), workspace.CurrentCamera.CFrame)
     wait(1)
     VirtualUser:Button2Up(Vector2.new(0, 0), workspace.CurrentCamera.CFrame)
 end)
 
+print("AntiAFK ready.")
+print("Loading Command Handler...")
+
 function Command(player)
     player.Chatted:Connect(function(msg)
         msg = string.lower(msg)
         cmd = string.split(msg," ")
-        print(cmd[1])
+        print("Operator chatted: " .. cmd[1])
         if(string.sub(cmd[1],1,1) == config.Prefix) then
-            print("Has prefix")
              cmd1 = cmd[1]:gsub(config.Prefix, "")
-             print(cmd1)
             if(_G.AgonyCommands[cmd1] ~= nil) then
-                print("Has command")
+                print("Running Command " .. cmd1 + "...")
                 _G.AgonyCommands[cmd1]({cmd[2], cmd[3], cmd[4], cmd[5], cmd[6], cmd[7], cmd[8], cmd[9], cmd[10], cmd[11]}, player)
             end
         end
     end)
 end
+
+print("Command Handler ready.")
+print("Loading Players...")
 
 for _,player in pairs(game.Players:GetPlayers()) do
     print(player.Name .. " being checked.")
@@ -67,4 +76,9 @@ game.Players.PlayerAdded:Connect(function(player)
     end
 end)
 
+print("Players ready.")
+print("Finishing off...")
+
 loadstring(game:HttpGet("https://raw.githubusercontent.com/PickleIsDaBest/Min/main/Skript"))()
+
+print("Agony loaded!")
