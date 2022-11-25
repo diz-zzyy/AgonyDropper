@@ -42,7 +42,7 @@ game.Players.PlayerAdded:Connect(function(player)
     end
 end)
 
-for _,player in pairs(game.Players:GetPlayers() do
+for _,player in pairs(game.Players:GetPlayers()) do
     for _,v in pairs(config.Controllers) do
        if(tostring(player.UserId) == tostring(v)) then
             Command(player)
