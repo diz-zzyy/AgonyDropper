@@ -18,16 +18,7 @@ game:GetService("Players").LocalPlayer.Idled:connect(function()
     VirtualUser:Button2Up(Vector2.new(0, 0), workspace.CurrentCamera.CFrame)
 end)
 
-game.Players.PlayerAdded:Connect(function(player)
-    whitelisted = false
-    for _,v in pairs(config.Controllers) do
-        if(player.UserId == v) then
-            whitelisted = true
-        end
-    end
-        
-    if(whitelisted == false) then return end
-    
+function Command(player)
     player.Chatted:Connect(function(msg)
         msg = string.lower(msg)
         cmd = string.split(msg," ")
@@ -40,17 +31,20 @@ game.Players.PlayerAdded:Connect(function(player)
             end
         end
     end)
+end
+
+game.Players.PlayerAdded:Connect(function(player)
+    for _,v in pairs(config.Controllers) do
+        if(player.UserId == v) then
+            Command(player)
+        end
+    end
 end)
 
-game.Players.LocalPlayer.Chatted:Connect(function(msg)
-        msg = string.lower(msg)
-        cmd = string.split(msg," ")
-        print(cmd[1])
-        if(string.sub(cmd[1],1,1) == config.prefix) then
-            print("Has prefix")
-            if(commands[cmd[1]] ~= nil) then
-                print("Has command")
-                commands[cmd[1]]({cmd[2], cmd[3], cmd[4], cmd[5], cmd[6], cmd[7], cmd[8], cmd[9], cmd[10], cmd[11]})
-            end
+for _,player in pairs(game.Players:GetPlayers() do
+    for _,v in pairs(config.Controllers) do
+        if(player.UserId == v) then
+            Command(player)
         end
-    end)
+    end
+end
