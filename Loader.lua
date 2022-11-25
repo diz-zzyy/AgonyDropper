@@ -17,9 +17,11 @@ else
     print("DaHood Detected!")
 end
 
-loadstring(game:HttpGet("https://raw.githubusercontent.com/diz-zzyy/AgonyDropper/main/Commands.lua"))()
-
 game:GetService("RunService"):Set3dRenderingEnabled(false)
+
+repeat wait() until game:IsLoaded()
+
+loadstring(game:HttpGet("https://raw.githubusercontent.com/diz-zzyy/AgonyDropper/main/Commands.lua"))()
 
 local VirtualUser = game:GetService("VirtualUser")
 game:GetService("Players").LocalPlayer.Idled:connect(function()
@@ -45,18 +47,22 @@ function Command(player)
     end)
 end
 
-game.Players.PlayerAdded:Connect(function(player)
-    for _,v in pairs(config.Controllers) do
-        if(tostring(player.UserId) == tostring(v)) then
-            Command(player)
-        end
-    end
-end)
-
 for _,player in pairs(game.Players:GetPlayers()) do
+    print(player.Name .. " being checked.")
     for _,v in pairs(config.Controllers) do
        if(tostring(player.UserId) == tostring(v)) then
+            print(player.Name .. " is a controller!")
             Command(player)
         end
     end
 end
+
+game.Players.PlayerAdded:Connect(function(player)
+        print(player.Name .. " being checked.")
+    for _,v in pairs(config.Controllers) do
+        if(tostring(player.UserId) == tostring(v)) then
+            print(player.Name .. " is a controller!")
+            Command(player)
+        end
+    end
+end)
