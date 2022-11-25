@@ -17,6 +17,7 @@ else
     print("DaHood Detected!")
 end
 
+setfpscap(config.MaxFPS)
 game:GetService("RunService"):Set3dRenderingEnabled(false)
 
 repeat wait() until game:IsLoaded() and game.Players.LocalPlayer.Character ~= nil
