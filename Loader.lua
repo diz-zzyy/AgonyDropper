@@ -1,14 +1,23 @@
 local config = _G.AgonyDropper
 
-if(_G.AgonyLoaded == true) then messagebox("Make sure you only execute Agony once.", "Agony", 0) return else _G.AgonyLoaded = true end
-
-loadstring(game:HttpGet("https://raw.githubusercontent.com/diz-zzyy/AgonyDropper/main/Commands.lua"))()
+if(_G.AgonyLoaded == true) then
+    messagebox("Make sure you only execute Agony once.", "Agony", 0)
+    error("Make sure you only execute Agony once.")
+    return
+else
+    print("Agony Loading...")
+    _G.AgonyLoaded = true 
+end
 
 if game.PlaceId ~= 2788229376 then
     messagebox("You are not in the correct game, please ensure you are in 'Da Hood'.", "Agony", 0)
     error("You are not in the correct game, please ensure you are in 'Da Hood'.")
-    return;
+    return
+else
+    print("DaHood Detected!")
 end
+
+loadstring(game:HttpGet("https://raw.githubusercontent.com/diz-zzyy/AgonyDropper/main/Commands.lua"))()
 
 game:GetService("RunService"):Set3dRenderingEnabled(false)
 
