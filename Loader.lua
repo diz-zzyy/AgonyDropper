@@ -19,8 +19,8 @@ end
 
 game:GetService("RunService"):Set3dRenderingEnabled(false)
 
-repeat wait() until game:IsLoaded()
-wait(1)
+repeat wait() until game:IsLoaded() and game.Players.LocalPlayer.Character ~= nil
+wait(5)
 
 loadstring(game:HttpGet("https://raw.githubusercontent.com/diz-zzyy/AgonyDropper/main/Commands.lua"))()
 
