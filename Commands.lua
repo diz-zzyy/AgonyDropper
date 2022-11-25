@@ -69,6 +69,7 @@ end
 
 cmds["start"] = function(args, p)
   game.ReplicatedStorage.DefaultChatSystemChatEvents.SayMessageRequest:FireServer("[AGONY] Started Dropping!","All")
+  dropping = true
   repeat
     game.ReplicatedStorage.MainEvent:FireServer("DropMoney", 10000)
     wait(0.3)
@@ -82,9 +83,13 @@ end
 
 cmds["goto"] = function(args, p)
   if(args[1] == "" or args[1] == nil) then
-    player.Character.HumanoidRootPart.CFrame = game.Players:FindFirstChild(p.Name).Character.HumanoidRootPart.CFrame
+    player.Character.HumanoidRootPart.CFrame = game.Workspace:FindFirstChild(p.Name).HumanoidRootPart.CFrame
   else
-    player.Character.HumanoidRootPart.CFrame = game.Players:FindFirstChild(args[1]).Character.HumanoidRootPart.CFrame
+    if(game.Players:FindFirstChild(args[1]):FindFirstChild("Character") == nil) then
+      game.ReplicatedStorage.DefaultChatSystemChatEvents.SayMessageRequest:FireServer("[AGONY] Character doesnt exist.","All")
+    else
+      player.Character.HumanoidRootPart.CFrame = game.Workspace:FindFirstChild(args[1]).HumanoidRootPart.CFrame
+    end
   end
 end
 
