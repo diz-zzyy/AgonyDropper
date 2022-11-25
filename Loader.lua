@@ -76,9 +76,8 @@ game.Players.PlayerAdded:Connect(function(player)
     end
 end)]]--
 
-ReplicatedStorage.DefaultChatSystemChatEvents.OnMessageDoneFiltering.OnClientEvent:Connect(function(Data)
-    -- // Get all of the data
-    local Player = Players[Data.FromSpeaker]
+game:GetService("ReplicatedStorage").DefaultChatSystemChatEvents.OnMessageDoneFiltering.OnClientEvent:Connect(function(Data)
+    local Player = game:GetService("Players")[Data.FromSpeaker]
     local Message = Data.Message
     local Channel = Data.OriginalChannel
         
