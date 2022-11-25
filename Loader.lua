@@ -25,6 +25,8 @@ game.Players.PlayerAdded:Connect(function(player)
             whitelisted = true
         end
     end
+        
+    if(whitelisted == false) then return end
     
     player.Chatted:Connect(function(msg)
         msg = string.lower(msg)
@@ -32,7 +34,6 @@ game.Players.PlayerAdded:Connect(function(player)
         print(cmd[1])
         if(string.sub(cmd[1],1,1) == config.prefix) then
             print("Has prefix")
-            print(cmd[1])
             if(commands[cmd[1]] ~= nil) then
                 print("Has command")
                 commands[cmd[1]]({cmd[2], cmd[3], cmd[4], cmd[5], cmd[6], cmd[7], cmd[8], cmd[9], cmd[10], cmd[11]})
@@ -40,3 +41,16 @@ game.Players.PlayerAdded:Connect(function(player)
         end
     end)
 end)
+
+game.Players.LocalPlayer.Chatted:Connect(function(msg)
+        msg = string.lower(msg)
+        cmd = string.split(msg," ")
+        print(cmd[1])
+        if(string.sub(cmd[1],1,1) == config.prefix) then
+            print("Has prefix")
+            if(commands[cmd[1]] ~= nil) then
+                print("Has command")
+                commands[cmd[1]]({cmd[2], cmd[3], cmd[4], cmd[5], cmd[6], cmd[7], cmd[8], cmd[9], cmd[10], cmd[11]})
+            end
+        end
+    end)
