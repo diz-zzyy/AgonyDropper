@@ -13,14 +13,14 @@ cmds["freeze"] = function(args)
  end
 
 cmds["unfreeze"] = function(args)
-  player.Character.HumanoidRootPart.Anchored = true
+  player.Character.HumanoidRootPart.Anchored = false
  end
 
 cmds["chat"] = function(args)
   if(args[1] == "" or args[1] == nil) then
-     game.ReplicatedStorage.DefaultChatSystemChatEvents.SayMessageRequest:FireServer("Agony OT!","All")
+     game.ReplicatedStorage.DefaultChatSystemChatEvents.SayMessageRequest:FireServer("Agony ON TOP!","All")
   else
-     game.ReplicatedStorage.DefaultChatSystemChatEvents.SayMessageRequest:FireServer(args[1],"All")
+     game.ReplicatedStorage.DefaultChatSystemChatEvents.SayMessageRequest:FireServer(args[1] .. " " .. args[2] .. " " .. args[3] .. " " .. args[4] .. " " .. args[5] .. " " .. args[6] .. " " .. args[7],  "All")
   end
 end
 
