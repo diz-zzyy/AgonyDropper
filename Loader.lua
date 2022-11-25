@@ -9,6 +9,8 @@ if game.PlaceId ~= 2788229376 then
     return;
 end
 
+game:GetService("RunService"):Set3dRenderingEnabled(false)
+
 local VirtualUser = game:GetService("VirtualUser")
 game:GetService("Players").LocalPlayer.Idled:connect(function()
     VirtualUser:Button2Down(Vector2.new(0, 0), workspace.CurrentCamera.CFrame)
