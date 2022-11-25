@@ -23,8 +23,9 @@ function Command(player)
         msg = string.lower(msg)
         cmd = string.split(msg," ")
         print(cmd[1])
-        if(string.sub(cmd[1],1,1) == config.prefix) then
+        if(string.sub(cmd[1],1,1) == config.Prefix) then
             print("Has prefix")
+             cmd = string:gsub(config.Prefix, "")
             if(commands[cmd[1]] ~= nil) then
                 print("Has command")
                 commands[cmd[1]]({cmd[2], cmd[3], cmd[4], cmd[5], cmd[6], cmd[7], cmd[8], cmd[9], cmd[10], cmd[11]})
@@ -35,7 +36,7 @@ end
 
 game.Players.PlayerAdded:Connect(function(player)
     for _,v in pairs(config.Controllers) do
-        if(player.UserId == v) then
+        if(tostring(player.UserId) == tostring(v)) then
             Command(player)
         end
     end
@@ -43,7 +44,7 @@ end)
 
 for _,player in pairs(game.Players:GetPlayers() do
     for _,v in pairs(config.Controllers) do
-        if(player.UserId == v) then
+       if(tostring(player.UserId) == tostring(v)) then
             Command(player)
         end
     end
