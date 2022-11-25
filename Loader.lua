@@ -39,7 +39,7 @@ print("AntiAFK ready.")
 print("Loading Command Handler...")
 
 function Command(player)
-    player.Chatted:Connect(function(msg)
+    player.PlayerChatted:Connect(function(msg)
         msg = string.lower(msg)
         cmd = string.split(msg," ")
         print("Operator chatted: " .. cmd[1])
