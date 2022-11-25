@@ -1,6 +1,5 @@
-_G.AgonyCommands = {}
-local cmds = _G.AgonyComnmands
+local cmds = {}
 
-cmds.test = function(args)
+cmds["test"] = function(args)
   print("Working!")
  end
