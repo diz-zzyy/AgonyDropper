@@ -7,6 +7,7 @@ local player = game.Players.LocalPlayer
 
 wallet = false
 dropping = false
+blocking = false
 
 ---------------------------------------------------------------
 
@@ -79,7 +80,7 @@ cmds["stop"] = function(args, p)
   game.ReplicatedStorage.DefaultChatSystemChatEvents.SayMessageRequest:FireServer("[AGONY] Stopped dropping!","All")
 end
 
-cmds["bring"] = function(args, p)
+cmds["goto"] = function(args, p)
   if(args[1] == "" or args[1] == nil) then
     player.Character.HumanoidRootPart.CFrame = game.Players:FindFirstChild(p.Name).Character.HumanoidRootPart.CFrame
   else
