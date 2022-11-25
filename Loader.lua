@@ -17,8 +17,9 @@ end
 
 game:GetService("RunService"):Set3dRenderingEnabled(false)
 
+repeat wait() until game.Players.LocalPlayer.Character ~= nil
 repeat wait() until game:IsLoaded()
-wait(1)
+wait(3)
 
 
 print("Loading Commands...")
