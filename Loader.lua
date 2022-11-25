@@ -30,7 +30,10 @@ game.Players.PlayerAdded:Connect(function(player)
         msg = string.lower(msg)
         cmd = string.split(msg," ")
         if(string.sub(chat,1,1) == config.prefix) then
+            print("Has prefix")
+            print(cmd[1])
             if(commands[cmd[1]] ~= nil) then
+                print("Has command")
                 commands[cmd[1]]({cmd[2], cmd[3], cmd[4], cmd[5], cmd[6], cmd[7], cmd[8], cmd[9], cmd[10], cmd[11]})
             end
         end
