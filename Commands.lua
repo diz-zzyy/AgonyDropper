@@ -85,7 +85,7 @@ cmds["goto"] = function(args, p)
   if(args[1] == "" or args[1] == nil) then
     player.Character.HumanoidRootPart.CFrame = game.Workspace:FindFirstChild(p.Name).HumanoidRootPart.CFrame
   else
-    if(game.Players:FindFirstChild(args[1]):FindFirstChild("Character") == nil) then
+    if(game.Workspace:FindFirstChild(args[1]) == nil) then
       game.ReplicatedStorage.DefaultChatSystemChatEvents.SayMessageRequest:FireServer("[AGONY] Character doesnt exist.","All")
     else
       player.Character.HumanoidRootPart.CFrame = game.Workspace:FindFirstChild(args[1]).HumanoidRootPart.CFrame
