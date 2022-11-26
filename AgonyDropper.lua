@@ -8,7 +8,7 @@ _G.AgonyDropper = {
     -- Prefix : Enter the prefix before each command.
     Prefix = "!",
     
-    -- Max FPS : Enter the Max FPS for the alts.
+    -- Whitelisting Key : The key recieved upon purchase.
     WhitelistKey = "FREETRIAL2022"
 }
 
