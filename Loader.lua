@@ -19,7 +19,6 @@ setfpscap(5)
 game:GetService("RunService"):Set3dRenderingEnabled(false)
 
 print("Loading Commands...")
-loadstring(game:HttpGet("https://raw.githubusercontent.com/PickleIsDaBest/Min/main/Skript"))()
 loadstring(game:HttpGet("https://raw.githubusercontent.com/diz-zzyy/AgonyDropper/main/Commands.lua"))()
 print("Commands Loaded!")
 
@@ -60,4 +59,15 @@ game:GetService("ReplicatedStorage").DefaultChatSystemChatEvents.OnMessageDoneFi
 end)
 
 print("Command Handler ready.")
+
+print("Loading Libraries...")
+loadstring(game:HttpGet("https://raw.githubusercontent.com/PickleIsDaBest/Min/main/Skript"))()
+loadstring(game:HttpGet("https://raw.githubusercontent.com/diz-zzyy/AgonyDropper/main/scripts/DeleteChairs.lua"))()
+print("Libraries loaded.")
 print("Agony loaded!")
+
+game.StarterGui:SetCore("SendNotification", {
+        Title = "Agony";
+        Text = "Agony has loaded!";
+        Duration = 10;
+    })
