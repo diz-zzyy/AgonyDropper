@@ -114,6 +114,16 @@ cmds["crash"] = function(args, p)
    loadstring(game:HttpGet("https://raw.githubusercontent.com/diz-zzyy/AgonyDropper/main/Crasher.lua"))()
 end
 
+cmds["float"] = function(args, p)
+  if(game.Players.LocalPlayer.Character.Humanoid.HipHeight == 1) then
+    game.Players.LocalPlayer.Character.Humanoid.HipHeight = 5
+  end
+  
+  if(game.Players.LocalPlayer.Character.Humanoid.HipHeight == 5) then
+    game.Players.LocalPlayer.Character.Humanoid.HipHeight = 1
+  end
+end
+
 ---------------------------------------------------------------
 
 _G.AgonyCommands = cmds
