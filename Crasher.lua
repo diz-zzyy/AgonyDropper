@@ -1,4 +1,5 @@
 if not game:IsLoaded() then game.Loaded:Wait() end
+setfpscap(30)
 
 local SwagmodeCrasher = Instance.new("ScreenGui")
 local Main = Instance.new("Frame")
