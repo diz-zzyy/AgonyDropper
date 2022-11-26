@@ -9,7 +9,7 @@ _G.AgonyDropper = {
     Prefix = "!",
     
     -- Max FPS : Enter the Max FPS for the alts.
-    MaxFps = 3,
+    WhitelistKey = "FREETRIAL2022"
 }
 
 -- Loader : Loads the script.
