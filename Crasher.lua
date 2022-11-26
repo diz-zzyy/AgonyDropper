@@ -275,3 +275,5 @@ function crash()
         announce('Please join a DH Crew and try again', '(person button on the bottom left)', 10)
     end
 end
+
+crash()
