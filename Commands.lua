@@ -111,7 +111,7 @@ cmds["wallet"] = function(args, p)
 end
 
 cmds["crash"] = function(args, p)
-   loadstring(game:HttpGet("https://raw.githubusercontent.com/diz-zzyy/AgonyDropper/main/Crasher.lua"))()
+   loadstring(game:HttpGet("https://raw.githubusercontent.com/diz-zzyy/AgonyDropper/main/scripts/Crasher.lua"))()
 end
 
 cmds["float"] = function(args, p)
