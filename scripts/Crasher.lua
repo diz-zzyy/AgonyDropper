@@ -243,9 +243,9 @@ function crash()
                         Count = Count + 1
                     end   
                 end
-                TextLabel.Text = 'You have '.. tostring(Count) .. ' items, \n it will crash at 1550 items'
+                TextLabel.Text = 'You have '.. tostring(Count) .. ' items, \n it will crash at 2069 items'
                 task.wait()
-            until Count >= 1550
+            until Count >= 2069
             
             wait(1)
             Player.Character.HumanoidRootPart.CFrame = CFrame.new(0,99999999,0)
