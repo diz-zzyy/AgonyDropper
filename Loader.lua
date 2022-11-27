@@ -52,11 +52,10 @@ repeat wait() until game:IsLoaded() and game.Players.LocalPlayer.Character ~= ni
 print("Loading Command Handler...")
 
 function Command(player, msg)
-     msg = string.lower(msg)
      cmd = string.split(msg," ")
      print("Controller chatted: " .. cmd[1])
-     if(string.sub(cmd[1],1,1) == config.Prefix) then
-          cmd1 = cmd[1]:gsub(config.Prefix, "")
+     if(string.sub(string.lower(cmd[1]),1,1) == config.Prefix) then
+          cmd1 = string.lower(cmd[1]):gsub(config.Prefix, "")
          if(_G.AgonyCommands[cmd1] ~= nil) then
              print("Running Command " .. cmd1 .. "...")
              _G.AgonyCommands[cmd1]({cmd[2], cmd[3], cmd[4], cmd[5], cmd[6], cmd[7], cmd[8], cmd[9], cmd[10], cmd[11]}, player)
