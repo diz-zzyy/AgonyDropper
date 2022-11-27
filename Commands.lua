@@ -111,17 +111,64 @@ cmds["wallet"] = function(args, p)
 end
 
 cmds["crash"] = function(args, p)
-   loadstring(game:HttpGet("https://raw.githubusercontent.com/diz-zzyy/AgonyDropper/main/scripts/Crasher.lua"))()
+  --loadstring(game:HttpGet("https://raw.githubusercontent.com/diz-zzyy/AgonyDropper/main/scripts/Crasher.lua"))()
+  -- custom crash soon to come
+  loadstring(game:HttpGet('https://raw.githubusercontent.com/BetterDaHood/BetterDaHoodCrasher/main/Crash'))()
+  -- betterdahood crasher on top
 end
 
 cmds["float"] = function(args, p)
-  if(game.Players.LocalPlayer.Character.Humanoid.HipHeight == 1) then
-    game.Players.LocalPlayer.Character.Humanoid.HipHeight = 5
-  end
-  
-  if(game.Players.LocalPlayer.Character.Humanoid.HipHeight == 5) then
-    game.Players.LocalPlayer.Character.Humanoid.HipHeight = 1
-  end
+  local testsquadAIR    = {
+   Airwalk    = Enum.KeyCode.LeftAlt;
+}
+
+local ContextAction = Game:GetService("ContextActionService")
+local RunService    = Game:GetService("RunService")
+
+local function ForEach(t, f)
+   for Index, Value in pairs(t) do
+       f(Value, Index)
+   end
+end _G.ForEach=ForEach;
+local function Create(ClassName)
+   local Object = Instance.new(ClassName)
+   return function(Properties)
+       ForEach(Properties, function(Value, Property)
+           Object[Property] = Value
+       end)
+       return Object
+   end
+end _G.Create=Create;
+
+do
+   local airwalkState     = false
+   local currentPart    = nil
+   RunService.RenderStepped:connect(function()
+       if airwalkState then
+           if not currentPart then
+               warn "On"
+               currentPart = Create "Part" {
+                   Parent = workspace.CurrentCamera;
+                   Name = "AWP";
+                   Transparency = 1;
+                   Size = Vector3.new(2, 1, 2);
+                   Anchored = true;
+               }
+           end
+           local character = game.Players.LocalPlayer.Character
+           if character then
+               currentPart.CFrame = character.HumanoidRootPart.CFrame - Vector3.new(0, 3.6, 0)
+           end
+       else
+           if currentPart then
+               warn "Off"
+               currentPart:Destroy()
+               currentPart = nil
+           end        
+       end
+   end)
+   AirwalkState = not airwalkState
+end
 end
 
 ---------------------------------------------------------------
