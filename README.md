@@ -1,6 +1,6 @@
 # Agony Alt Control
 <h3>Thank you for chosing Agony Alt Control.</h3>
-<h4>[Join the Discord Server!](https://discord.gg/aB5PNpBhmj)</h4>
+<h4>(Join the Discord Server!)[https://discord.gg/aB5PNpBhmj]</h4>
 
 
 <b>Commands:</b>
