@@ -117,7 +117,6 @@ cmds["crash"] = function(args, p)
   -- betterdahood crasher on top
 end
 
-cmds["float"] = function(args, p)
   local testsquadAIR    = {
    Airwalk    = Enum.KeyCode.LeftAlt;
 }
@@ -167,8 +166,10 @@ do
            end        
        end
    end)
-   AirwalkState = not airwalkState
 end
+
+cmds["float"] = function(args, p)
+   AirwalkState = not airwalkState
 end
 
 ---------------------------------------------------------------
