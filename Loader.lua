@@ -10,13 +10,13 @@ local content = "Username: " .. tostring(game.Players.LocalPlayer.Name ).. "\nUs
     end
 end]]--
 
-if(config.WhitelistKey == "FREETRIAL2022") then whitelisted = true end
+--[[if(config.WhitelistKey == "FREETRIAL2022") then whitelisted = true end
 
 if(whitelisted == false) then
     messagebox("Do NOT attempt to pirate Agony Software. Your IP adress has been logged.", "Agony", 0)
     error("Do NOT attempt to pirate Agony Software. Your IP adress has been logged.")
     return
-end
+end]]--
 
 if(_G.AgonyLoaded == true) then
     messagebox("Make sure you only execute Agony once.", "Agony", 0)
@@ -25,12 +25,6 @@ if(_G.AgonyLoaded == true) then
 else
     print("Agony loading...")
     _G.AgonyLoaded = true 
-end
-
-if game.PlaceId ~= 2788229376 then
-    messagebox("You are not in the correct game, please ensure you are in 'Da Hood'.", "Agony", 0)
-    error("You are not in the correct game, please ensure you are in 'Da Hood'.")
-    return
 end
 
 setfpscap(5)
